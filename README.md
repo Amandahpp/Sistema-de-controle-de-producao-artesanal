@@ -327,3 +327,4 @@ Explicação de conceitos relacionados à Programação Orientada a Objetos e pa
 
 Todas as decisões de implementação, modelagem e validação foram analisadas e adaptadas pelo autor do projeto, que permanece responsável pelo conteúdo final desenvolvido.
 
+
