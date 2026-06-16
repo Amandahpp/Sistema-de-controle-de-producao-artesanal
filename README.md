@@ -1,330 +1,92 @@
-Sistema de Controle de Produção Artesanal de Crochê
-
-Descrição do Projeto
-
-O Sistema de Controle de Produção Artesanal de Crochê tem como objetivo auxiliar artesãos no gerenciamento da produção, controle de materiais, cadastro de produtos e acompanhamento de pedidos realizados por clientes.
-
-O sistema permite organizar as informações relacionadas à fabricação de peças de crochê, controlar o estoque de materiais utilizados na produção e registrar pedidos efetuados pelos clientes.
-
-O projeto foi desenvolvido seguindo os princípios da Programação Orientada a Objetos (POO), buscando modularidade, reutilização de código e facilidade de manutenção.
-
-Objetivos
-
-Gerenciar clientes e seus pedidos.
-
-Controlar produtos artesanais confeccionados.
-
-Gerenciar materiais utilizados na produção.
-
-Registrar receitas de fabricação das peças.
-
-Controlar processos de produção.
-
-Calcular custos de fabricação.
-
-Organizar informações de forma estruturada e orientada a objetos.
-
-Diagrama de Classes
-
-Inserir aqui a imagem do diagrama UML.
-
-Exemplo:
-
-Diagrama UML
-
-Descrição das Classes
-
+🧶 Sistema de Controle de Produção Artesanal de Crochê
+Sistema desenvolvido em Java utilizando Programação Orientada a Objetos (POO) para auxiliar artesãos no gerenciamento da produção de peças em crochê, controle de materiais, estoque e pedidos de clientes.
+📋 Funcionalidades
+👤 Cadastro de clientes
+🛍️ Registro de pedidos
+🧶 Cadastro de produtos artesanais
+📦 Controle de materiais e estoque
+📝 Registro de receitas de fabricação
+🏭 Controle de produção
+💰 Cálculo de custos de fabricação
+🏗️ Tecnologias Utilizadas
+Java 17
+Programação Orientada a Objetos (POO)
+UML
+JUnit
+📊 Diagrama UML
+🧩 Estrutura do Sistema
 Cliente
-
-Representa o cliente que realiza pedidos no sistema.
-
-Atributos
-
-id
-
-nome
-
-telefone
-
-Métodos
-
-realizarPedido()
-
+Responsável pelo cadastro dos clientes e realização de pedidos.
 Pedido
-
-Representa uma solicitação de compra realizada por um cliente.
-
-Atributos
-
-id
-
-dataPedido
-
-status
-
-valorTotal
-
-Métodos
-
-calcularTotal()
-
+Armazena informações dos pedidos realizados pelos clientes.
 ItemPedido
-
-Representa um item pertencente a um pedido.
-
-Atributos
-
-quantidade
-
-subtotal
-
-Métodos
-
-calcularSubtotal()
-
+Representa cada produto presente em um pedido.
 Produto
-
 Representa uma peça artesanal produzida em crochê.
-
-Atributos
-
-id
-
-nome
-
-descricao
-
-precoVenda
-
-tempoProducao
-
-Métodos
-
-calcularCusto()
-
+Material
+Representa os insumos utilizados na produção.
 ReceitaCroche
-
-Representa a composição de materiais necessária para produzir um produto.
-
-Atributos
-
-id
-
-quantidadeNecessaria
-
-Cada objeto ReceitaCroche relaciona um produto a um material e define a quantidade necessária daquele material para a produção.
-
-Material
-
-Representa os insumos utilizados na fabricação dos produtos.
-
-Atributos
-
-id
-
-nome
-
-quantidadeEstoque
-
-unidadeMedida
-
-custoUnitario
-
-Métodos
-
-atualizarEstoque()
-
+Define quais materiais e quantidades são necessários para fabricar um produto.
 Producao
-
-Representa o processo de fabricação de um produto.
-
-Atributos
-
-id
-
-dataInicio
-
-dataFim
-
-status
-
-quantidadeProduzida
-
-Métodos
-
-iniciar()
-
-finalizar()
-
-Relacionamentos
-
-Um Cliente pode realizar vários Pedidos.
-
-Um Pedido possui vários Itens de Pedido.
-
-Um ItemPedido referencia um Produto.
-
-Um Produto possui várias Receitas de Crochê.
-
-Cada Receita de Crochê utiliza um Material.
-
-Um Produto pode possuir diversos registros de Produção.
-
-Pilares da Programação Orientada a Objetos
-
-Encapsulamento
-
-Os atributos das classes são privados e acessados por meio de métodos específicos, garantindo segurança e controle sobre os dados.
-
-Exemplo
-
-private String nome;
-
-public String getNome() {
-    return nome;
-}
-Abstração
-
-Cada classe representa uma entidade do mundo real relacionada ao processo produtivo artesanal.
-
-Exemplos:
-
+Controla o processo de fabricação das peças.
+🔗 Relacionamentos
 Cliente
-
-Pedido
-
-Produto
-
-Material
-
-Produção
-
+   │
+   └── Pedido
+           │
+           └── ItemPedido
+                     │
+                     └── Produto
+                              │
+                              ├── ReceitaCroche
+                              │          │
+                              │          └── Material
+                              │
+                              └── Producao
+🧠 Conceitos de POO Aplicados
+Encapsulamento
+Proteção dos atributos por meio de métodos getters e setters.
+Abstração
+Representação das entidades do mundo real através de classes.
 Herança
-
-Embora não tenha sido necessária na modelagem inicial, o sistema pode ser expandido futuramente utilizando herança.
-
-Exemplo:
-
+Possibilidade de expansão futura.
 Pessoa
  ├── Cliente
  └── Funcionario
 Polimorfismo
-
-Pode ser utilizado futuramente para cálculos específicos de custos ou diferentes tipos de produtos artesanais.
-
-Exemplo:
-
-public double calcularCusto() {
-    // implementação específica
-}
-Padrões de Projeto Utilizados
-
+Possibilidade de diferentes implementações para regras de negócio.
+🎨 Padrões de Projeto
 Factory Method
-
-O padrão Factory Method será utilizado para centralizar a criação dos objetos do sistema.
-
-Exemplo
-
-ProdutoFactory.criarProduto(
-    "Amigurumi Coelho",
-    80.00
-);
-Benefícios
-
-Reduz acoplamento.
-
-Facilita manutenção.
-
-Centraliza a lógica de criação.
-
-Padrão Strategy
-
-O padrão Strategy foi utilizado para permitir diferentes formas de cálculo do preço de venda dos produtos artesanais.
-
-Por meio desse padrão, as regras de negócio ficam desacopladas da classe Produto, permitindo que novas estratégias sejam adicionadas sem alterar o código existente.
-
-Exemplos de estratégias implementadas:
-
-Cálculo com margem de lucro de 30%.
-Cálculo com margem de lucro de 50%.
-Possibilidade futura de descontos promocionais.
-
-Benefícios
-
-Maior flexibilidade.
-Menor acoplamento.
-Facilidade de manutenção.
-Segue o princípio Open/Closed da orientação a objetos. 
-
-Funcionalidades Implementadas
-
-Cadastro de clientes.
-
-Cadastro de produtos.
-
-Cadastro de materiais.
-
-Registro de pedidos.
-
-Registro de itens de pedido.
-
-Controle de produção.
-
-Controle de estoque.
-
-Cálculo de custo de produção.
-
-Associação entre produtos e materiais através da ReceitaCroche.
-
-Como Executar o Projeto
-
-Pré-requisitos
-
-Java JDK 17 ou superior
-
-Git
-
-IDE (IntelliJ, Eclipse ou VS Code)
-
-Clonar o Repositório
-
+Centraliza a criação de objetos do sistema.
+Strategy
+Permite diferentes estratégias de cálculo de preço e custo dos produtos.
+🚀 Como Executar
+Clone o projeto
 git clone https://github.com/seu-usuario/seu-repositorio.git
-Executar
-
+Entre na pasta
 cd projeto-croche
-Abrir o projeto na IDE e executar a classe principal:
-
+Execute a aplicação
+Abra o projeto em sua IDE favorita (IntelliJ, Eclipse ou VS Code) e execute a classe:
 Main.java
-Testes
-
-Os testes podem ser executados através do framework JUnit.
-
-Exemplo:
-
+🧪 Testes
 mvn test
 ou
-
 gradle test
-Detalhamento de Aprendizado
-
-Durante o desenvolvimento deste projeto foram aplicados conceitos fundamentais de Programação Orientada a Objetos, como encapsulamento, abstração e modelagem de classes.
-
-Também foi possível compreender a importância da modelagem UML no planejamento do software, além da aplicação de padrões de projeto para tornar o sistema mais organizado e flexível.
-
-O desenvolvimento contribuiu para o entendimento das relações entre objetos, controle de estoque, gerenciamento de produção e organização de sistemas voltados para pequenos negócios.
-
-Declaração de Uso de IA
-
-Ferramentas de Inteligência Artificial foram utilizadas como apoio para:
-
+📚 Aprendizados
+Este projeto permitiu aplicar conceitos de:
+Programação Orientada a Objetos
+Modelagem UML
+Relacionamentos entre classes
+Controle de estoque
+Processos de produção
+Padrões de Projeto
+👨‍💻 Autor
+Projeto desenvolvido para fins acadêmicos na disciplina de Programação Orientada a Objetos.
+🤖 Uso de Inteligência Artificial
+Ferramentas de IA foram utilizadas como apoio para:
 Revisão da modelagem UML;
-
-Sugestões de estruturação do projeto;
-
-Auxílio na documentação;
-
-Explicação de conceitos relacionados à Programação Orientada a Objetos e padrões de projeto.
-
-Todas as decisões de implementação, modelagem e validação foram analisadas e adaptadas pelo autor do projeto, que permanece responsável pelo conteúdo final desenvolvido.
-
+Organização da documentação;
+Explicação de conceitos de POO;
+Sugestões de melhorias no projeto.
+Todas as decisões finais de modelagem e implementação foram analisadas e validadas pelo autor.
 
