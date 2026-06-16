@@ -29,9 +29,10 @@ Sistema desenvolvido utilizando Programação Orientada a Objetos para auxiliar 
 Adicione aqui a imagem do seu diagrama UML.
 
 ```markdown
-![Diagrama UML](imagens/uml.png)
-```
+ <img width="1280" height="1061" alt="UML Projeto TOO" src="https://github.com/user-attachments/assets/9bc3ea39-e3aa-403a-aacc-f17415acb5e6" />
 
+
+```
 ---
 
 ## 🧩 Estrutura do Sistema
