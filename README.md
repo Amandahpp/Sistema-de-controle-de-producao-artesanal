@@ -9,10 +9,12 @@ Sistema desenvolvido utilizando Programação Orientada a Objetos para auxiliar 
 * 👤 Cadastro de clientes
 * 🛍️ Registro de pedidos
 * 🧶 Cadastro de produtos artesanais
-* 📦 Controle de materiais e estoque
+* 📦 Controle de materiais
+* 📊 Controle de estoque
 * 📝 Registro de receitas de fabricação
 * 🏭 Controle de produção
 * 💰 Cálculo de custos de fabricação
+* ⚠️ Verificação de disponibilidade de materiais para produção
 
 ---
 
@@ -26,10 +28,7 @@ Sistema desenvolvido utilizando Programação Orientada a Objetos para auxiliar 
 
 ## 📊 Diagrama UML
 
-Adicione aqui a imagem do seu diagrama UML.
-
-
- <img width="1280" height="1061" alt="UML Projeto TOO" src="https://github.com/user-attachments/assets/9bc3ea39-e3aa-403a-aacc-f17415acb5e6" />
+<img width="1280" height="1061" alt="UML Projeto TOO" src="https://github.com/user-attachments/assets/1e0da809-387a-4bb8-91fa-b2e15754321b" />
 
 
 ---
@@ -56,6 +55,10 @@ Representa uma peça artesanal produzida em crochê.
 
 Representa os insumos utilizados na produção.
 
+### Estoque
+
+Responsável pelo controle das quantidades disponíveis dos materiais, entradas, saídas e verificação de disponibilidade para produção.
+
 ### ReceitaCroche
 
 Define quais materiais e quantidades são necessários para fabricar um produto.
@@ -80,6 +83,8 @@ Cliente
                               ├── ReceitaCroche
                               │         │
                               │         └── Material
+                              │                  │
+                              │                  └── Estoque
                               │
                               └── Producao
 ```
@@ -90,11 +95,11 @@ Cliente
 
 ### Encapsulamento
 
-Proteção dos atributos através de métodos apropriados.
+Proteção dos atributos através de métodos apropriados para manipulação dos dados.
 
 ### Abstração
 
-Representação de entidades reais por meio de classes.
+Representação das entidades do mundo real por meio de classes e objetos.
 
 ### Herança
 
@@ -108,7 +113,7 @@ Pessoa
 
 ### Polimorfismo
 
-Permite diferentes implementações para regras de negócio específicas.
+Permite diferentes implementações para regras específicas de cálculo de custos, preços e produção.
 
 ---
 
@@ -116,11 +121,32 @@ Permite diferentes implementações para regras de negócio específicas.
 
 ### Factory Method
 
-Centraliza a criação dos objetos do sistema.
+Centraliza a criação dos objetos do sistema, facilitando manutenção e expansão.
 
 ### Strategy
 
-Permite diferentes estratégias para cálculo de preços e custos.
+Permite utilizar diferentes estratégias para cálculo de custos de produção e formação de preços.
+
+---
+
+## 📦 Controle de Estoque
+
+A classe **Estoque** foi adicionada para separar a responsabilidade de gerenciamento das quantidades disponíveis dos materiais.
+
+### Principais responsabilidades
+
+* Registrar entradas de materiais;
+* Registrar saídas de materiais;
+* Consultar quantidade disponível;
+* Verificar estoque mínimo;
+* Validar disponibilidade antes do início da produção.
+
+### Benefícios
+
+* Maior organização do sistema;
+* Melhor aderência ao princípio da Responsabilidade Única (SRP);
+* Facilidade para futuras expansões, como relatórios e histórico de movimentações;
+* Estrutura semelhante à utilizada em sistemas reais de gestão.
 
 ---
 
@@ -158,18 +184,19 @@ python testes.py
 
 Durante o desenvolvimento deste projeto foram aplicados conceitos fundamentais de:
 
-* Programação Orientada a Objetos
-* Modelagem UML
-* Relacionamentos entre classes
-* Controle de estoque
-* Gestão de produção
-* Organização de sistemas para pequenos negócios
+* Programação Orientada a Objetos;
+* Modelagem UML;
+* Relacionamentos entre classes;
+* Controle de estoque;
+* Gestão de produção;
+* Organização de sistemas para pequenos negócios;
+* Separação de responsabilidades entre entidades do domínio.
 
 ---
 
 ## 👩‍💻 Autora
 
-Amanda Hopp
+Amanda Andreis Hoppe
 
 Projeto desenvolvido para fins acadêmicos na disciplina de Programação Orientada a Objetos.
 
@@ -177,7 +204,7 @@ Projeto desenvolvido para fins acadêmicos na disciplina de Programação Orient
 
 ## 🤖 Uso de Inteligência Artificial
 
-Ferramentas de Inteligência Artificial foram utilizadas como apoio para:
+Ferramentas de Inteligência Artificial como ChatGPT e Gemini foram utilizadas como apoio para:
 
 * Revisão da modelagem UML;
 * Organização da documentação;
@@ -185,3 +212,4 @@ Ferramentas de Inteligência Artificial foram utilizadas como apoio para:
 * Sugestões de melhorias no projeto.
 
 Todas as decisões finais de modelagem e implementação foram analisadas e validadas pela autora.
+
