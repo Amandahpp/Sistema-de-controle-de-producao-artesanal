@@ -8,4 +8,6 @@ class Material:
 
     def atualizar_estoque(self,qntd):
         self.qntd_estoque += qntd
-    
+    #ver pra que serve isso 
+    def __str__(self):
+        return f"{self.nome} ({self.quantidade_estoque} {self.unidade_medida})"

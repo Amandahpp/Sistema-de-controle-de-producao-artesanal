@@ -27,3 +27,4 @@ urso = Produto(
 urso.receitas.append(receita)
 
 print("Custo:", urso.calcular_custo())
+#melhorar isso aqui para ficar um menu que possa ser inserido ao inves de ja receber 
