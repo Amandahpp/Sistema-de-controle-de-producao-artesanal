@@ -1,4 +1,4 @@
-from datetime import date
+from pendente import Pendente
 
 
 class Pedido:
@@ -8,8 +8,7 @@ class Pedido:
 
     def __init__(self, id):
         self.id = id
-        self.data_pedido = date.today()
-        self.status = "Aberto"
+        self.status = Pendente()
         self.valor_total = 0.0
         self.itens = []
 
@@ -27,10 +26,15 @@ class Pedido:
         total = 0
 
         for item in self.itens:
-            total += item.subtotal
+            total += item.calcular_subtotal()
 
         return total
+    def alterar_estado(self):
+       self.estado.proximo_estado(self)
 
+    def mostrar_estado(self):
+       return self.estado.nome()
+ 
     def __str__(self):
         return (
             f"Pedido {self.id} - "

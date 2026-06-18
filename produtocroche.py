@@ -3,8 +3,7 @@ class Produto:
     Produto vendido pela empresa.
     """
 
-    def __init__(self, id, nome, descricao,
-                 preco_venda, tempo_producao):
+    def __init__(self, id, nome, descricao,preco_venda, tempo_producao):
         self.id = id
         self.nome = nome
         self.descricao = descricao
@@ -24,12 +23,13 @@ class Produto:
         """
         Soma o custo de todos os materiais.
         """
-        total = 0
 
-        for receita in self.receitas:
-            total += receita.custo_material()
+        custo_materiais = sum(receita.custo_material() 
+                              for receita in self.receitas)
 
-        return total
+        custo_mao_obra = (self.tempo_producao * 13.50)
+
+        return custo_materiais + custo_mao_obra
 
     def __str__(self):
         return self.nome

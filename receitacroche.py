@@ -4,16 +4,13 @@ class ReceitaCroche:
     informa quanto daquele material é necessário.
     """
 
-    def __init__(self, id, material, quantidade_necessaria):
+    def __init__(self, id, material, qntd_necessaria):
         self.id = id
         self.material = material
-        self.quantidade_necessaria = quantidade_necessaria
+        self.qntd_necessaria = qntd_necessaria
 
     def custo_material(self):
         """
         Calcula o custo do material utilizado.
         """
-        return (
-            self.quantidade_necessaria *
-            self.material.custo_unitario
-        )
+        return (self.qntd_necessaria * self.material.custo_uni)

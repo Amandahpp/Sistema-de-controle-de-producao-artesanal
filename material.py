@@ -6,8 +6,15 @@ class Material:
         self.uni_media = uni_medida
         self.custo_uni = custo_uni
 
-    def atualizar_estoque(self,qntd):
-        self.qntd_estoque += qntd
+    def atualizar_estoque(self, quantidade):
+
+        if self.qntd_estoque + quantidade < 0:
+            raise ValueError(
+                "Material insuficiente."
+            )
+
+        self.qntd_estoque += quantidade
+       
     #ver pra que serve isso 
     def __str__(self):
-        return f"{self.nome} ({self.quantidade_estoque} {self.unidade_medida})"
+        return f"{self.nome} ({self.qntd_estoque} {self.uni_medida})"
