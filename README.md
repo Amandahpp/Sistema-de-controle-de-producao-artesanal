@@ -1,6 +1,6 @@
 #  Sistema de Controle de Produção Artesanal de Crochê
 
-Sistema desenvolvido utilizando Programação Orientada a Objetos para auxiliar artesãos no gerenciamento da produção de peças em crochê, controle de materiais, estoque e pedidos de clientes, e organização financeira.
+Sistema desenvolvido utilizando Tecnologia de Orientação a Objetos para auxiliar artesãos no gerenciamento da produção de peças em crochê, controle de materiais, estoque e pedidos de clientes, e organização financeira.
 
 ---
 
@@ -20,15 +20,14 @@ Sistema desenvolvido utilizando Programação Orientada a Objetos para auxiliar 
 ##  Tecnologias Utilizadas
 
 * Python
-* Programação Orientada a Objetos (POO)
+* Tecnologia de Orientação a Objetos (TOO)
 * UML
 
 ---
 
 ##  Diagrama UML
 
-<img width="1280" height="1061" alt="UML Projeto TOO" src="https://github.com/user-attachments/assets/d20e7c6d-08f2-4b75-9217-5aca5c3f083d" />
-
+<img width="1280" height="1061" alt="UML Projeto TOO (1)" src="https://github.com/user-attachments/assets/8769ceff-f3ac-4c29-8b4b-114f9fb1e0fa" />
 ---
 
 ##  Estrutura do Sistema
@@ -89,25 +88,19 @@ Cliente
 
 ### Encapsulamento
 
-Proteção dos atributos através de métodos apropriados para manipulação dos dados.
+O encapsulamento foi utilizado ao concentrar os dados e comportamentos dentro das próprias classes. Por exemplo, a classe Produto controla internamente o cálculo de custos através dos métodos calcular_custo() e _custo_materiais().
 
 ### Abstração
 
-Representação das entidades do mundo real por meio de classes e objetos.
+Foi utitlizada nos estados da producao, que define os comportamentos obrigatórios para todos os estados da produção sem especificar sua implementação.
 
 ### Herança
 
-Possibilidade de expansão futura do sistema.
-
-```text
-Pessoa
- ├── Cliente
- └── Funcionario
-```
+Foi utitliza na classe producocroche onde ele herda os dados do produto.
 
 ### Polimorfismo
 
-Permite diferentes implementações para regras específicas de cálculo de custos, preços e produção.
+Permite diferentes implementações para regras específicas de cálculo de custos, preços e produção, principalemnte na classe produtocroche onde cada subclasse recebe um valor diferente para ser implementado, e utitliza o mesmo metodo valor_hora().
 
 ---
 
@@ -115,11 +108,11 @@ Permite diferentes implementações para regras específicas de cálculo de cust
 
 ### Factory Method
 
-Centraliza a criação dos objetos do sistema, facilitando manutenção e expansão.
+Utitlizei o metodo Factory Method para centralizar a criação dos produtos, um exemplo seria a criação de uma peça de amigurumi, eu chamo a subclasse do tipo amigurumi e ele cria o objeto dentro da subclasse oque permite que ele ja calcule o valor na classe produtocroche com o valor da hora que eu estipulei,sem precisar chamar tudo de novo.
 
-### Strategy
+### State
 
-Permite utilizar diferentes estratégias para cálculo de custos de produção e formação de preços.
+Utitilizei o metodo State para instanciar os estados da producao das minhas peças,elas tem os estados: em_producao, pendente e finalizada. 
 
 ---
 
@@ -135,21 +128,21 @@ python main.py
 
 Durante o desenvolvimento deste projeto foram aplicados conceitos fundamentais de:
 
-* Programação Orientada a Objetos;
+* Tecnologia de Orientação a Objetos;
 * Modelagem UML;
 * Relacionamentos entre classes;
 * Controle de estoque/materiais;
 * Gestão de produção;
 * Organização de sistemas para pequenos negócios;
 * Separação de responsabilidades entre entidades do domínio.
-
+* Calculos de valores de peças.
 ---
 
 ##  Autora
 
 Amanda Andreis Hoppe
 
-Projeto desenvolvido para fins acadêmicos na disciplina de Programação Orientada a Objetos.
+Projeto desenvolvido para fins acadêmicos na disciplina de Tecnologia de Orientação a Objetos.
 
 ---
 
@@ -159,7 +152,7 @@ Ferramentas de Inteligência Artificial como ChatGPT e Claude foram utilizadas c
 
 * Revisão da modelagem UML;
 * Organização da documentação;
-* Sugestões de melhorias no projeto.
+* Sugestões de melhorias no projeto e no código.
 
 Todas as decisões finais de modelagem e implementação foram analisadas e validadas pela autora.
 
