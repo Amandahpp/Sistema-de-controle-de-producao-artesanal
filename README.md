@@ -13,7 +13,7 @@ Sistema desenvolvido utilizando Programação Orientada a Objetos para auxiliar 
 *  Registro de receitas de fabricação
 *  Controle de produção
 *  Cálculo de custos de fabricação
-* Verificação de disponibilidade de materiais para produção
+*  Verificação de disponibilidade de materiais para produção
 
 ---
 
