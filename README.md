@@ -44,7 +44,7 @@ Armazena informações dos pedidos realizados pelos clientes.
 
 Representa cada produto presente em um pedido.
 
-### Produto
+### ProdutoCroche
 
 Representa uma peça artesanal produzida em crochê.
 
